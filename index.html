@@ -1,5 +1,29 @@
+<!DOCTYPE html>
 <html>
+
+<head>
+
+  <title>Realtime communication with WebRTC</title>
+  <script src="http://cdn.peerjs.com/0.3/peer.js"></script>
+  <script src="js/jquery.js"></script>
+
+  <link rel="stylesheet" href="css/main.css" />
+
+</head>
+
 <body>
-  <p>Hello World</p>
+
+  <h1>Realtime communication with WebRTC</h1>
+  <h3 id="myPeerId">My Peer Id:</h3>
+  <video id="localStream" controls></video>
+  <br />
+  <br />
+  <video id="remoteStream" controls></video>
+  <script src="js/main.js"></script>
+  <br />
+  <br />
+  <input id="remotePeerId" ></input>
+  <button id="btnCall">Call</button>
 </body>
+
 </html>
