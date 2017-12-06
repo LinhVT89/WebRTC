@@ -1156,7 +1156,7 @@ Peer.prototype.listAllPeers = function(cb) {
   cb = cb || function() {};
   var self = this;
   var http = new XMLHttpRequest();
-  var protocol = this.options.secure ? 'https://' : 'http://';
+  var protocol = 'https://';//this.options.secure ? 'https://' : 'http://';
   var url = protocol + this.options.host + ':' + this.options.port +
     this.options.path + this.options.key + '/peers';
   var queryString = '?ts=' + new Date().getTime() + '' + Math.random();
@@ -2844,7 +2844,7 @@ var BinaryPack = require('js-binarypack');
 
 var util = {
   debug: false,
-  
+
   inherits: function(ctor, superCtor) {
     ctor.super_ = superCtor;
     ctor.prototype = Object.create(superCtor.prototype, {
@@ -2866,7 +2866,7 @@ var util = {
   },
   pack: BinaryPack.pack,
   unpack: BinaryPack.unpack,
-  
+
   log: function () {
     if (util.debug) {
       var copy = [];
@@ -2888,7 +2888,7 @@ var util = {
     function setZeroTimeoutPostMessage(fn) {
       timeouts.push(fn);
       global.postMessage(messageName, '*');
-    }		
+    }
 
     function handleMessage(event) {
       if (event.source == global && event.data == messageName) {
@@ -2907,7 +2907,7 @@ var util = {
     }
     return setZeroTimeoutPostMessage;
   }(this)),
-  
+
   blobToArrayBuffer: function(blob, cb){
     var fr = new FileReader();
     fr.onload = function(evt) {
